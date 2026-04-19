@@ -56,7 +56,7 @@ export function MaterialCard({ result, rank }: MaterialCardProps) {
           {/* Quick Stats */}
           <div className="grid grid-cols-3 gap-3 mb-4">
             <div className="flex items-center space-x-2">
-              <Leaf className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+              <Leaf className="w-4 h-4 text-pink-accent flex-shrink-0" />
               <div className="min-w-0">
                 <p className="text-xs text-slate-500">Carbon</p>
                 <p className="text-sm font-semibold text-slate-900 truncate">

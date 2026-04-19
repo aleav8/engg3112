@@ -3,10 +3,18 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 import { Badge } from "../components/ui/badge";
 import { Leaf, Heart, Shield, Calculator, TrendingUp, AlertCircle } from "lucide-react";
 import { motion } from "motion/react";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
+
+const data = [
+  { name: "Carbon", value: 45, color: "#ffb1e9" },
+  { name: "Health", value: 35, color: "#b43582" },
+  { name: "Regulatory", value: 20, color: "#404D99" }
+];
+
 
 export function Methodology() {
   return (
-    <div className="space-y-6 max-w-4xl">
+    <div className="space-y-6">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -29,7 +37,7 @@ export function Methodology() {
       >
         <Card className="p-6">
           <div className="flex items-start space-x-3 mb-4">
-            <Calculator className="w-6 h-6 text-emerald-600 mt-1 flex-shrink-0" />
+            <Calculator className="w-6 h-6 text-pink-accent mt-1 flex-shrink-0" />
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-2">Scoring Overview</h2>
               <p className="text-slate-600">
@@ -40,18 +48,33 @@ export function Methodology() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 mt-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-emerald-600">45%</div>
-              <div className="text-sm text-slate-600">Carbon</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-rose-600">35%</div>
-              <div className="text-sm text-slate-600">Health</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600">20%</div>
-              <div className="text-sm text-slate-600">Regulatory</div>
+          <div className="flex flex-col items-center mt-6">
+            <PieChart width={300} height={250}>
+              <Pie
+                data={data}
+                dataKey="value"
+                innerRadius={60}
+                outerRadius={80}
+                paddingAngle={3}
+                label={({ percent }) => `${Math.round(percent * 100)}%`}
+              >
+                {data.map((entry, index) => (
+                  <Cell key={index} fill={entry.color} />
+                ))}
+              </Pie>
+            </PieChart>
+
+            {/* Optional legend (matches your old labels) */}
+            <div className="flex gap-4 mt-4 text-sm">
+              {data.map((item) => (
+                <div key={item.name} className="flex items-center gap-1">
+                  <div
+                    className="w-3 h-3 rounded-full"
+                    style={{ backgroundColor: item.color }}
+                  />
+                  {item.name}
+                </div>
+              ))}
             </div>
           </div>
         </Card>
@@ -69,8 +92,8 @@ export function Methodology() {
           <AccordionItem value="carbon" className="border rounded-lg px-6 bg-white">
             <AccordionTrigger className="hover:no-underline">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
-                  <Leaf className="w-5 h-5 text-emerald-600" />
+                <div className="w-10 h-10 bg-carbon-background rounded-lg flex items-center justify-center">
+                  <Leaf className="w-5 h-5 text-carbon-accent" />
                 </div>
                 <div className="text-left">
                   <div className="font-semibold text-slate-900">Carbon Emissions</div>
@@ -114,8 +137,8 @@ export function Methodology() {
           <AccordionItem value="health" className="border rounded-lg px-6 bg-white">
             <AccordionTrigger className="hover:no-underline">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center">
-                  <Heart className="w-5 h-5 text-rose-600" />
+                <div className="w-10 h-10 bg-health-background rounded-lg flex items-center justify-center">
+                  <Heart className="w-5 h-5 text-health-accent" />
                 </div>
                 <div className="text-left">
                   <div className="font-semibold text-slate-900">Public Health Impact</div>
@@ -164,8 +187,8 @@ export function Methodology() {
           <AccordionItem value="regulatory" className="border rounded-lg px-6 bg-white">
             <AccordionTrigger className="hover:no-underline">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-purple-600" />
+                <div className="w-10 h-10 bg-regulatory-background rounded-lg flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-regulatory-accent" />
                 </div>
                 <div className="text-left">
                   <div className="font-semibold text-slate-900">Regulatory Compliance</div>
@@ -223,7 +246,7 @@ export function Methodology() {
       >
         <Card className="p-6">
           <div className="flex items-start space-x-3 mb-4">
-            <TrendingUp className="w-6 h-6 text-emerald-600 mt-1 flex-shrink-0" />
+            <TrendingUp className="w-6 h-6 text-pink-accent mt-1 flex-shrink-0" />
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-2">Overall Score Formula</h2>
               <p className="text-slate-600 mb-4">

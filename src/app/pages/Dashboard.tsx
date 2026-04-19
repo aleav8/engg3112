@@ -149,7 +149,7 @@ export function Dashboard() {
           Material Sustainability Dashboard
         </h1>
         <p className="text-slate-600">
-          Select materials to analyze and compare based on carbon emissions, lifespan, public health
+          Select materials to analyse and compare based on carbon emissions, lifespan, public health
           impact, and regulatory compliance.
         </p>
       </motion.div>
@@ -165,7 +165,7 @@ export function Dashboard() {
             <div>
               <h2 className="text-lg font-semibold text-slate-900">Select Materials</h2>
               <p className="text-sm text-slate-500">
-                Choose materials to compare and analyze
+                Choose materials to compare and analyse
               </p>
             </div>
             {selectedMaterials.length > 0 && (

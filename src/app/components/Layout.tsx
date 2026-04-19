@@ -3,7 +3,7 @@ import { Menu, X, MessageSquare, Save, BookOpen, LayoutDashboard } from "lucide-
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-// import { Chatbot } from "./Chatbot";
+import { Chatbot } from "./Chatbot";
 
 export function Layout() {
   const location = useLocation();
@@ -44,7 +44,7 @@ export function Layout() {
                     to={item.path}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
                       isActive(item.path)
-                        ? "bg-emerald-50 text-emerald-700"
+                        ? "bg-pink-accent-background text-pink-accent"
                         : "text-slate-600 hover:bg-slate-100"
                     }`}
                   >
@@ -85,7 +85,7 @@ export function Layout() {
                           onClick={() => setIsMobileMenuOpen(false)}
                           className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
                             isActive(item.path)
-                              ? "bg-emerald-50 text-emerald-700"
+                              ? "bg-pink-accent-background text-pink-accent"
                               : "text-slate-600 hover:bg-slate-100"
                           }`}
                         >
@@ -119,7 +119,7 @@ export function Layout() {
       </main>
 
       {/* Chatbot */}
-      {/* <Chatbot isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} /> */}
+      <Chatbot isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
 
       {/* Mobile FAB for Chat */}
       <Button

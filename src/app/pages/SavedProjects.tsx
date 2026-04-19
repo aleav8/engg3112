@@ -113,8 +113,8 @@ export function SavedProjects() {
                 {/* Project Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-start space-x-3 flex-1 min-w-0">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <FolderOpen className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 bg-pink-accent-background rounded-lg flex items-center justify-center flex-shrink-0">
+                      <FolderOpen className="w-6 h-6 text-pink-accent" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-slate-900 text-lg truncate">

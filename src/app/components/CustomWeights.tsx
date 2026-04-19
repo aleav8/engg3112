@@ -65,24 +65,24 @@ export function CustomWeights({ weights, onChange }: CustomWeightsProps) {
       key: "carbon" as keyof WeightsType,
       label: "Carbon Emissions",
       icon: Leaf,
-      bgColor: "bg-emerald-100",
-      iconColor: "text-emerald-600",
+      bgColor: "bg-carbon-background",
+      iconColor: "text-carbon-accent",
       description: "Environmental impact and carbon footprint",
     },
     {
       key: "health" as keyof WeightsType,
       label: "Public Health",
       icon: Heart,
-      bgColor: "bg-rose-100",
-      iconColor: "text-rose-600",
+      bgColor: "bg-health-background",
+      iconColor: "text-health-accent",
       description: "Urban heat, air quality, and safety",
     },
     {
       key: "regulatory" as keyof WeightsType,
       label: "Regulatory Compliance",
       icon: Shield,
-      bgColor: "bg-purple-100",
-      iconColor: "text-purple-600",
+      bgColor: "bg-regulatory-background",
+      iconColor: "text-regulatory-accent",
       description: "Building codes and standards",
     },
   ];
@@ -91,7 +91,7 @@ export function CustomWeights({ weights, onChange }: CustomWeightsProps) {
     <Card className="p-4 sm:p-6">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-3">
-          <Sliders className="w-5 h-5 text-emerald-600" />
+          <Sliders className="w-5 h-5 text-pink-accent" />
           <div>
             <h2 className="text-lg font-semibold text-slate-900">Custom Weighting</h2>
             <p className="text-sm text-slate-500">
