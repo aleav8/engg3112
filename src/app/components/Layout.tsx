@@ -30,7 +30,7 @@ export function Layout() {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
               <div className="hidden sm:block">
-                <h1 className="text-lg font-semibold text-slate-900">Powerpuff Girls</h1>
+                <h1 className="text-lg font-semibold text-slate-900">Carbon Compass</h1>
               </div>
             </Link>
 
